@@ -11,12 +11,12 @@ html {
 /* Links */
 
 a {
-	color: $link;
+	color: $action-color;
 
 	&:hover,
 	&:active,
 	&:focus {
-		color: $link-focus;
+		color: $base-color;
 	}
 }
 
@@ -26,11 +26,27 @@ div.dashboard-widget-submit input:hover,
 .subsubsub a:hover,
 .subsubsub a.current:hover,
 .ui-tabs-nav a:hover {
-	color: $link-focus;
+	color: $base-color;
 }
 
 
 /* Forms */
+
+input[type=checkbox]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+input[type=password]:focus, 
+input[type=radio]:focus, 
+input[type=search]:focus, 
+input[type=tel]:focus, 
+input[type=text]:focus, 
+input[type=url]:focus, 
+select:focus, 
+textarea:focus {
+	border-color: $base-color;
+	-webkit-box-shadow: 0 0 2px rgba($base-color,.8);
+	box-shadow: 0 0 2px rgba($base-color,.8);
+}
 
 input[type=checkbox]:checked:before {
     color: $form-checked;
@@ -42,7 +58,7 @@ input[type=radio]:checked:before {
 
 .wp-core-ui input[type="reset"]:hover,
 .wp-core-ui input[type="reset"]:active {
-	color: $link-focus;
+	color: $base-color;
 }
 
 
@@ -50,7 +66,7 @@ input[type=radio]:checked:before {
 
 .wp-core-ui {
 	.button-primary {
-		@include button( $button-color );
+		@include button( $base-color );
 	}
 
 	.wp-ui-primary {
